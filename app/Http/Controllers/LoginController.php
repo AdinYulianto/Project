@@ -44,7 +44,7 @@ class LoginController extends Controller
 
             $request->session()->regenerate();
 
-            return redirect()->intended('/');
+            return redirect()->route('Dashboard-Admin');
         }
 
         return back()->withErrors([

@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\DashboardAdmin;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,7 @@ Route::post('/aksi-register',[RegisterController::class, 'insert'])->name('prose
 Route::get('/login',[LoginController::class, 'index'])->name('login');
 Route::post('/proses-login',[LoginController::class, 'proseslogin'])->name('proses-login');
 
-Route::get('/dashboardadmin',[dashboardadmin::class,'index'])->name('Dashboard-Admin');
+
+
+Route::get('/dashboardadmin',[DashboardAdmin::class,'index'])->name('Dashboard-Admin')->middleware('auth');
+Route::get('/logout',[DashboardAdmin::class,'logout'])->name('logout')->middleware('auth');

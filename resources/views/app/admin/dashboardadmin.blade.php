@@ -10,6 +10,6 @@
     
 
     <h2>Selamat Datang Di Halaman Admin</h2>
-    <a href="">LOG OUT</a>
+    <a href="{{ route('logout')}}">LOG OUT</a>
 </body>
 </html>
